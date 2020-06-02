@@ -9,8 +9,8 @@ class CampsiteInfo extends Component {
 
     renderCampsite(campsite) {
         return (
-            <div className="color-md-5 m-1">
-                <Card onClick={() => this.onCampsiteSelect(campsite)}>
+            <div className="col-md-5 m-1">
+                <Card>
                     <CardImg width="100%" src={campsite.image} alt={campsite.name} />
                     <CardImgOverlay>
                         <CardTitle>{campsite.name}</CardTitle>
@@ -38,15 +38,17 @@ class CampsiteInfo extends Component {
     render() {
         if (this.props.campsite) {
             return (
-                <div className="row">
-                    {this.renderCampsite(this.props.campsite)}
-                    {this.renderComments(this.props.campsite.comments)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(this.props.campsite)}
+                        {this.renderComments(this.props.campsite.comments)}
+                    </div>
                 </div>
             )
         } else {
             return (
                 <div>
-                    
+
                 </div>
             )
         }

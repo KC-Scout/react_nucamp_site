@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import { CAMPSITES } from '../shared/campsites';
 import CampsiteInfo from './CampsiteInfoComponent';
-import Header from './HeaderComponent'
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 
 class Main extends Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class Main extends Component {
                 <Header />
                 <Directory campsites={this.state.campsites} onClick={campsiteId => this.onCampsiteSelect(campsiteId)}/>
                 <CampsiteInfo campsite={this.state.campsites.filter(campsite => campsite.id === this.state.selectedCampsite)[0]} />
+                <Footer />
             </div>
         );
     }
